@@ -4,7 +4,7 @@ local_user:
   password: 
 
 deployment_name: concourse
-db_persistent_disk_type: 5120
+db_persistent_disk_type: 10240
 db_vm_type: medium.disk
 external_url: https://concourse.pcfdemo.net
 external_host: concourse.pcfdemo.net
