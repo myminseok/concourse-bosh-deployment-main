@@ -1,0 +1,16 @@
+---
+local_user:
+  username: admin
+  password: 
+
+deployment_name: concourse
+db_persistent_disk_type: 5120
+db_vm_type: medium.disk
+external_url: https://concourse.pcfdemo.net
+external_host: concourse.pcfdemo.net
+network_name: concourse
+postgres_password: 
+web_ip: 10.10.10.210 
+web_vm_type: medium
+worker_vm_type: xlarge.disk
+worker_ephemeral_disk: 100GB_ephemeral_disk

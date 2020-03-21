@@ -1,0 +1,8 @@
+*.ca
+*.certificate
+variables-credhub.yml
+variables.yml
+credhub-vars-store.yml
+cluster-creds.yml
+concourse-bosh-deployment
+

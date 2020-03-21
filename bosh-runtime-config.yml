@@ -1,0 +1,67 @@
+---
+addons:
+- include:
+    stemcell:
+    - os: ubuntu-xenial
+  name: bosh-dns
+  jobs:
+  - name: bosh-dns
+    release: bosh-dns
+    properties:
+      api:
+        client:
+          tls:
+            ca: "((/dns_api_client_tls.ca))"
+            certificate: "((/dns_api_client_tls.certificate))"
+            private_key: "((/dns_api_client_tls.private_key))"
+        server:
+          tls:
+            ca: "((/dns_api_server_tls.ca))"
+            certificate: "((/dns_api_server_tls.certificate))"
+            private_key: "((/dns_api_server_tls.private_key))"
+      cache:
+        enabled: true
+      health:
+        client:
+          tls: "((/bosh_dns_health_client_tls))"
+        enabled: true
+        server:
+          tls: "((/bosh_dns_health_server_tls))"
+      override_nameserver: false
+releases:
+- name: bosh-dns
+  version: 1.19.0
+variables:
+- name: "/bosh_dns_health_tls_ca"
+  options:
+    common_name: bosh-dns-health-tls-ca
+    is_ca: true
+  type: certificate
+- name: "/bosh_dns_health_server_tls"
+  options:
+    ca: "/bosh_dns_health_tls_ca"
+    common_name: health.bosh-dns
+    extended_key_usage:
+    - server_auth
+  type: certificate
+- name: "/bosh_dns_health_client_tls"
+  options:
+    ca: "/bosh_dns_health_tls_ca"
+    common_name: health.bosh-dns
+    extended_key_usage:
+    - client_auth
+  type: certificate
+- name: "/dns_api_server_tls"
+  options:
+    ca: "/bosh_dns_health_tls_ca"
+    common_name: api.bosh-dns
+    extended_key_usage:
+    - server_auth
+  type: certificate
+- name: "/dns_api_client_tls"
+  options:
+    ca: "/bosh_dns_health_tls_ca"
+    common_name: api.bosh-dns
+    extended_key_usage:
+    - client_auth
+  type: certificate

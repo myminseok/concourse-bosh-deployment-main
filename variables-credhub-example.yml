@@ -1,0 +1,8 @@
+---
+credhub_url: "https://10.10.10.211:8844"
+credhub_client_id: "concourse_client"
+credhub_client_secret:
+credhub_ca_cert: |
+  -----BEGIN CERTIFICATE-----
+  oJLWx4KI7EHRNLW9n4RltVyj7r21Uwcz
+  -----END CERTIFICATE-----

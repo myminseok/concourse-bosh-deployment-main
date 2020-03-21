@@ -1,0 +1,18 @@
+---
+deployment-network: concourse
+external-ip-address: credhub.pcfdemo.net 
+internal-ip-address: 10.10.10.211
+db_host: localhost
+db_port: 5432
+uaa_external_url: "https://credhub.pcfdemo.net:8443"
+uaa_internal_url: "https://10.10.10.211:8443"
+uaa_version: "74.9.0"
+uaa_sha1: "9647fff0fcb249e71ba2290849b4cdbbf7550165"
+credhub_version: "2.5.7"
+credhub_sha1: "9647fff0fcb249e71ba2290849b4cdbbf7550165"
+postgres_version: "39"
+postgres_sha1: "8ff395540e77a461322a01c41aa68973c10f1ffb"
+bpm_version: '1.1.6'
+bpm_sha1: '5bad6161dbbcf068830a100b6a76056fe3b99bc8'
+
+
