@@ -1,6 +1,6 @@
 ## deploy concoursee with credhub collocated with concourse ewb on vsphere
 ## concourse.pcfdemo.net 10.10.10.210
-source ~/bosh-1/setup-boshenv.sh
+source ~/workspace/bosh-1/setup-boshenv.sh
 bosh deploy \
 -d concourse ./concourse-bosh-deployment/cluster/concourse.yml \
 -l ./concourse-bosh-deployment/versions.yml \
